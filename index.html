@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M25</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a los niños, presentar el enfoque del día y preparar sus mentes para la actividad.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la Diapositiva 2 “Bienvenida” y saluda a los niños mientras muestras el logo de Gnius Club, luego introduce el tema del día y la necesidad de entrenar el cerebro para la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola, Genios del CODE SQUAD! ¡Bienvenidos al Gran Circo Mágico! Hoy vamos a ayudar a la maga Celeste y a su elefante Saltarín. ¡El show está a punto de comenzar pero la coreografía mágica no está lista! Para lograr una función espectacular, tendremos que entrenar nuestros cerebros y aprender a programar las acciones del elefante Saltarín. ¿Están listos para esta aventura?"</td>
+            </tr>
+            <tr>
+                 <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la Diapositiva 3 "Gimnasio CODE SQUAD" e introduce la importancia de entrenar el cerebro antes de enfrentar el reto del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Muy bien, equipo! Antes de que empiece la función, vamos a preparar nuestras mentes. ¡Pongan mucha atención al Gimnasio del CODE SQUAD!  Escuchen con atención la canción, pues nos dará las claves para movernos y pensar mejor. ¡Vamos a activar nuestros cerebros y prepararnos para el gran show!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-secuenciacion')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar a los niños para la misión con un ejercicio de algoritmos a través de un baile.</div>
+    </div>
+    <div id="baile-secuenciacion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 4 “Baile de Algoritmos” e introduce la canción que seguiremos hoy.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Es momento de movernos, Genios! La canción que escucharán ahora es mágica, como el circo. Sigan los pasos con atención y recuerden cada movimiento que hacemos, ya que cada uno es como una instrucción que vamos a usar para la coreografía de Saltarín. ¡Prepárense para bailar y para aprender, el show está a punto de empezar!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🎪 Actividad 3: Planteamiento del Problema ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Introducir a los niños en el contexto de la misión utilizando la historia.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta la actitud de cuenta cuentos y narra la historia.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Llegamos al Gran Circo Mágico, un lugar lleno de luces, música y alegría. Aquí, la maga Celeste tiene un gran espectáculo donde su elefante Saltarín hace increíbles trucos. Pero, ¡oh no! Hoy, la coreografía mágica se ha desordenado y el elefante Saltarín no sabe qué hacer. La maga Celeste está muy triste y necesita nuestra ayuda para que el show pueda continuar. ¿Podemos ayudarla?"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 y explica el reto para motivar al CODE SQUAD.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Equipo CODE SQUAD! La maga Celeste ha preparado un escenario especial para Saltarín, donde cada baldosa representa un movimiento diferente. Hay baldosas para caminar, girar, saludar y hacer una reverencia. Nuestra misión es usar fichas de ruta para construir un camino que le indique a Saltarín los movimientos que tiene que hacer durante la función. Pero, ¡cuidado!, cada movimiento debe estar en el orden correcto para que la coreografía sea perfecta. ¡Manos a la obra, Genios, y ayudemos a la maga Celeste a salvar el show!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: Formación de Parejas ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Explicar la importancia del trabajo en equipo en parejas y asegurar la organización.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7 “Formación de Equipos”, explica la importancia de trabajar en equipo y junta a los niños en pares. Si el número es impar, integra un trío para asegurar que todos tengan compañeros.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Recuerden que cuando trabajamos juntos, podemos lograr cosas increíbles. Como dicen por ahí, 'Si quieres llegar rápido, camina solo; si quieres llegar lejos, camina acompañado.' En este caso, para crear la coreografía de Saltarín, vamos a formar parejas. Busquen a un compañero para formar su equipo y levantar la mano. Si alguien no tiene compañero, ¡no se preocupen!, yo los ayudaré a organizarse."
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos los niños estén emparejados y organizados para trabajar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¿Todos encontraron a su compañero? ¡Perfecto! Recuerden, trabajar en pareja significa compartir ideas y ayudarse mutuamente. Cada uno de ustedes es importante para crear la coreografía perfecta de Saltarín. ¡Vamos a demostrar que juntos somos un gran equipo en este circo mágico!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('codigo_visual')">
+        <div class="title">🎨 Actividad 5: Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir los retos de codificación según la edad y trabajar con fichas de ruta.</div>
+    </div>
+    <div id="codigo_visual" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('intercambio_construccion')">
+        <div class="title">🔄 Actividad 6: Intercambio de Códigos y Construcción ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Intercambio de códigos entre equipos y práctica de programación con fichas de ruta.</div>
+    </div>
+    <div id="intercambio_construccion" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('obstaculo_historia')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="obstaculo_historia" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🏁 Actividad 8: Conclusión de la Historia y Reflexión ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la misión y reflexión sobre lo aprendido durante la clase.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 25 y cierra la historia como cuenta cuentos. Realiza preguntas para reflexionar sobre lo aprendido.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                    "¡Genios del CODE SQUAD, lo lograron! Gracias a su increíble trabajo en equipo, la maga Celeste y el elefante Saltarín han ofrecido un espectáculo maravilloso. Saltarín ha seguido cada paso de la coreografía mágica y el público está feliz. ¡Qué gran aventura hemos tenido en el circo! Ahora, reflexionemos juntos sobre lo que aprendimos hoy:
+- ¿Por qué fue importante seguir el orden de las fichas?
+- ¿Qué hicimos para que el elefante Saltarín supiera cuándo girar, saludar o caminar?
+- ¿Cómo nos ayudó trabajar en equipo para superar todos los retos? ¡Son unos genios del circo y de la programación!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+    "K1": {
+        "5.1": [
+            {
+                "step": 1,
+                 "time": { "30": 1, "40": 1, "50": 1 },
+                 "accion": "Reproduce la DIAPOSITIVA 8 y explica cómo crear el código para resolver el reto.",
+                "dialogo": "¡CODE SQUAD! Para ayudar al elefante Saltarín, vamos a crear un código con fichas para que sepa qué hacer en la coreografía. Como yo, vamos a usar fichas de camino para representar los movimientos: caminar, girar y saludar. Usen fichas rectas para caminar, esquinas para girar, y curvas simples para saludar. ¡Vamos a crear magia juntos!"
+             },
+            {
+                "step": 2,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion": "Reproduce la DIAPOSITIVA 9, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo":"¡Aquí tienen sus hojas y colores, Genios! Dibujen las acciones que hará Saltarín (caminar, girar y saludar) y la ficha que representará cada movimiento. ¡A programar el show del circo!"
+            },
+             {
+                "step": 3,
+                 "time": { "30": 5, "40": 10, "50": 10 },
+                 "accion": "Reproduce la DIAPOSITIVA 10 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo": "¡Excelente, CODE SQUAD! Recuerden, cada movimiento debe tener su ficha correcta. Dibujen primero el movimiento, luego el símbolo '=' y al lado la ficha que lo representa. ¡Vamos a diseñar la mejor coreografía para Saltarín!"
+             }
+          ],
+        "6": [
+            {
+                 "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo":"¡CODE SQUAD! ¡Sus códigos están súper creativos! Ahora, para que el show de Saltarín sea aún más mágico, vamos a intercambiar los códigos. Yo los recogeré, les pondré su nombre y se los daré a otro equipo. ¡Así, todos podrán construir diferentes coreografías para el elefante Saltarín!"
+             },
+             {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion":"Reproduce la DIAPOSITIVA 18 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡Es hora de construir la coreografía con fichas! Utilicen el código que recibieron y coloquen las fichas de ruta en el orden correcto: la recta para caminar, la esquina para girar y la curva simple para saludar. ¡Ayudemos a Saltarín a hacer su mejor presentación!"
+             }
+           ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo":"¡CODE SQUAD! ¡Atención, tenemos un problema! Justo cuando Saltarín estaba a punto de empezar el show, un grupo de changuitos traviesos movió algunas de las baldosas del escenario. ¡Oh, no! Pero no se preocupen, el cuartel general nos envió un código de rescate. Con este código, vamos a reorganizar el escenario y ayudar a Saltarín a completar su presentación. ¡Manos a la obra!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 22 “Código de Rescate K1” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo":"¡Genios del CODE SQUAD! Aquí tenemos el nuevo código mágico. Usen las fichas rectas para caminar, las esquinas para girar y las curvas simples para saludar. Sigan el código con atención y vamos a crear un camino seguro para que Saltarín termine la función. ¡Ustedes pueden!"
+            }
+           ]
+    },
+   "K2": {
+         "5.2": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                 "accion":"Reproduce la DIAPOSITIVA 11 y explica cómo crear el código para resolver el reto.",
+                "dialogo":"¡CODE SQUAD! Para ayudar al elefante Saltarín, vamos a crear un código más avanzado. Ahora, además de caminar, girar y saludar, vamos a añadir el movimiento de hacer una reverencia. Vamos a utilizar las fichas de camino: recta para caminar, esquina para girar, curva simple para saludar, y la ficha de retorno para la reverencia. ¡A crear una coreografía inolvidable!"
+             },
+            {
+                "step": 2,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 12, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo":"¡Aquí tienen sus hojas y colores, CODE SQUAD! Dibujen los movimientos (caminar, girar, saludar y reverencia), y la ficha que representará cada uno. ¡Prepárense para programar un show lleno de magia!"
+             },
+            {
+                "step": 3,
+                 "time": { "30": 5, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 13 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo":"¡Excelente, Genios! Recuerden, cada movimiento con su ficha correcta: una ficha recta para caminar, una esquina para girar, una curva simple para saludar y la ficha de retorno para la reverencia. ¡Dibujen con cuidado y asegúrense de que todo esté claro para el show!"
+            }
+        ],
+        "6": [
+            {
+                 "step": 1,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo":"¡CODE SQUAD! ¡Sus códigos están increíbles! Ahora, vamos a intercambiar nuestros códigos para hacer el show de Saltarín aún más emocionante. Yo recogeré sus creaciones y se las daré a otro equipo. ¡Prepárense para construir coreografías aún más mágicas!"
+            },
+            {
+                 "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                "accion":"Reproduce la DIAPOSITIVA 19 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡Genios, es hora de construir! Usen el código que recibieron para crear la coreografía de Saltarín con fichas: recta para caminar, esquina para girar, curva simple para saludar y la ficha de retorno para la reverencia. ¡Vamos a hacer un show espectacular juntos!"
+            }
+          ],
+        "7": [
+            {
+                 "step": 1,
+                 "time": { "30": 3, "40": 4, "50": 5 },
+                 "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo":"¡CODE SQUAD! ¡Alerta, alerta! Los changuitos traviesos volvieron a mover las baldosas del escenario y desordenaron la coreografía mágica de Saltarín. ¡Oh no! Pero no se preocupen, el cuartel general nos envió un código secreto para reorganizar todo. ¡Vamos a trabajar juntos para superar este nuevo reto!"
+            },
+            {
+                 "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 23 “Código de Rescate K2” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo":"¡Genios del CODE SQUAD! Aquí tienen el código de rescate. Sigan las indicaciones y usen las fichas: rectas para caminar, esquinas para girar, curvas simples para saludar y fichas de retorno para la reverencia. Coloquen las fichas con cuidado y aseguren un show increíble para Saltarín. ¡Ustedes son increíbles!"
+             }
+         ]
+    },
+    "K3": {
+         "5.3": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                 "accion":"Reproduce la DIAPOSITIVA 14 y explica cómo crear el código para resolver el reto.",
+                "dialogo":"¡CODE SQUAD! Vamos a crear un código más completo para Saltarín, agregando un nuevo movimiento: saltar. Usaremos fichas de camino para representar cada acción: recta para caminar, esquina para girar, curva simple para saludar, la ficha de retorno para la reverencia y la curva doble para saltar. ¡Vamos a crear una coreografía espectacular!"
+             },
+            {
+                 "step": 2,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 15, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo":"¡Aquí tienen sus hojas y colores, Genios! Dibujen los movimientos de Saltarín (caminar, girar, saludar, reverencia y saltar) y las fichas de ruta que representarán cada uno. ¡Es momento de codificar la magia!"
+            },
+            {
+                 "step": 3,
+                 "time": { "30": 5, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 16 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo":"¡Excelente, CODE SQUAD! Cada movimiento tiene su ficha: recta para caminar, esquina para girar, curva simple para saludar, ficha de retorno para la reverencia, y curva doble para saltar. Dibujen con precisión y diseñemos un show inolvidable para Saltarín. ¡Ustedes pueden!"
+            }
+         ],
+        "6": [
+            {
+                 "step": 1,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                 "dialogo":"¡CODE SQUAD! ¡Sus códigos están increíbles! Vamos a intercambiarlos para crear nuevas coreografías. Recogeré todos sus códigos, les pondré su nombre y se los daré a otro equipo. ¡Así, todos tendrán la oportunidad de construir coreografías únicas para Saltarín!"
+             },
+             {
+                 "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 20 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡Es hora de construir, Genios! Usen los códigos que recibieron para crear las coreografías de Saltarín con las fichas: recta para caminar, esquina para girar, curva simple para saludar, la ficha de retorno para la reverencia y la curva doble para saltar. ¡Vamos a trabajar en equipo para un show maravilloso!"
+            }
+          ],
+        "7": [
+            {
+                 "step": 1,
+                 "time": { "30": 3, "40": 4, "50": 5 },
+                 "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo":"¡CODE SQUAD! ¡Emergencia en el Gran Circo Mágico! Los changuitos traviesos han vuelto y han desordenado todas las baldosas del escenario. ¡Oh no! Saltarín no puede seguir la coreografía. El cuartel general nos envió un código secreto para que podamos reorganizar el camino. ¡Trabajemos juntos y resolvamos este nuevo reto!"
+             },
+            {
+                 "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 24 y motiva a los Genios a construir el nuevo código con bloques siguiendo el patrón proyectado.",
+                "dialogo":"¡Genios del CODE SQUAD! Aquí está el código del cuartel. Utilicen las fichas rectas para caminar, esquinas para girar, curvas simples para saludar, fichas de retorno para la reverencia y curvas dobles para saltar. ¡Vamos a organizar el escenario para que Saltarín pueda hacer el mejor show de todos!"
+             }
+         ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
